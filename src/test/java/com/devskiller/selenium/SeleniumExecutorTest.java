@@ -15,18 +15,20 @@ public class SeleniumExecutorTest extends BaseSeleniumTest {
 
         executor.getDropdownValues();
 //        executor.setInput("test input");
+        
+        //ข้อที่ 1
+        String[] dropDown = {"Volvo", "Fiat", "Opel", "Audi", "BMW", "Toyota"};
+        new SeleniumExecutorExtension(webDriver).setDropdownValues(dropDown);
 
-
+        //ข้อที่ 2
         String[] inputs = new SeleniumExecutorExtension(webDriver).getInput();
         assertEquals("test input", inputs[0]);
         assertEquals("test input", inputs[1]);
         assertEquals("test input", inputs[2]);
-
         for (String var : inputs) {
             System.out.println(var);
         }
 
-        String[] dropDown = {"Volvo", "Fiat", "Opel", "Audi", "BMW", "Toyota"};
-        new SeleniumExecutorExtension(webDriver).setDropdownValues(dropDown);
+        
     }
 }

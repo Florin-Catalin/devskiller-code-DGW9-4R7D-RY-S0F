@@ -16,7 +16,7 @@ public class SeleniumExecutorExtension {
         this.driver = driver;
     }
 
-    private Select getDropdown() { return new Select(driver.findElement(By.tagName("select"))); }
+    private Select getDropdown() { return new Select(driver.findElement(By.id("dropdown-main"))); }
 
     private List<WebElement> getInputs() { return driver.findElements(By.cssSelector(".container.text-box")); }
 
